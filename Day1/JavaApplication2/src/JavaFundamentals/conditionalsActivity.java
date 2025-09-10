@@ -56,25 +56,25 @@ public class conditionalsActivity {
         
         switch (var) {
             case "1":
-                System.out.println("Lunes");
+                System.out.println("Monday");
                 break;
             case "2":
-                System.out.println("Martes");
+                System.out.println("Tuesday");
                 break;
             case "3":
-                System.out.println("Miercoles");
+                System.out.println("Wednesday");
                 break;
             case "4":
-                System.out.println("Jueves");
+                System.out.println("Thursday");
                 break;
             case "5":
-                System.out.println("Viernes");
+                System.out.println("Friday");
                 break;
             case "6":
-                System.out.println("Sabado");
+                System.out.println("Saturday");
                 break;
             case "7":
-                System.out.println("Domingo");
+                System.out.println("Sunday");
                 break;
             
             default:
