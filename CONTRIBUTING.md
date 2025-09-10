@@ -1,4 +1,4 @@
-# Contributing to Proyects
+# Contributing to Projects
 
 
 ## Table of Contents
