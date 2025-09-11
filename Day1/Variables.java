@@ -1,4 +1,4 @@
-package Dia1;
+package Day1;
 public class Variables {
     public static void main(String[] args) {
         String name = "Yeferson";

@@ -1,4 +1,4 @@
-package Dia1;
+package Day1;
 import java.util.Scanner;
 
 public class GymQuote {
