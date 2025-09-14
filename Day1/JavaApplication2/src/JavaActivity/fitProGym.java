@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class fitProGym {
 
     public static void main(String[] args) {
-        
+        discounts(args);
     }
     
     public static void data(String[] args) {
@@ -21,7 +21,7 @@ public class fitProGym {
         double weigth = input.nextDouble();
         System.out.println("What's your plan? (Basic, Plus, Premium)");
         String plan = input.nextLine();
-        System.out.println("Is your first time?");
+        System.out.println("Is your first time? (True or False)");
         boolean firstTime = input.nextBoolean();
     }
 
