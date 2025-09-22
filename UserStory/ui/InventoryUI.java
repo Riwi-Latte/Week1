@@ -8,46 +8,38 @@ import javax.swing.JOptionPane;
 import UserStory.models.Product;
 import UserStory.services.InventoryService;
 
-/**
- * InventoryUI - handles all user interface interactions using JOptionPane
- * Maintains EXACTLY the same interface as the original monolithic code
- * Designed for someone with 2 months Java experience
- */
 public class InventoryUI {
     private InventoryService inventoryService;  // Service to handle business logic
-    private DecimalFormat df;                   // Format decimal numbers like original
+    private DecimalFormat df;                   // Format decimal numbers
     
-    /**
-     * Constructor - initialize the UI
-     */
     public InventoryUI() {
         this.inventoryService = new InventoryService();
-        this.df = new DecimalFormat("#.##"); // Same format as original
+        this.df = new DecimalFormat("#.##");
     }
     
     /**
      * Start the application - main entry point for UI
      */
     public void start() {
-        // Welcome message - exactly like original
+        // Welcome message
         JOptionPane.showMessageDialog(null, 
             "Welcome to Inventory Management System!\n" +
-            "Welcome",
+            "Welcome", 
+            "Welcome", 
             JOptionPane.INFORMATION_MESSAGE);
         
-        // Main program loop - exactly like original
+        // Main program loop
         boolean running = true;
         while (running) {
             running = showMainMenu();
         }
         
-        // Show final ticket when exiting - exactly like original
+        // Show final ticket when exiting
         showFinalTicket();
     }
     
     /**
      * Display the main menu and handle user selection
-     * EXACTLY the same as the original showMainMenu method
      * @return true to continue running, false to exit
      */
     private boolean showMainMenu() {
@@ -107,10 +99,9 @@ public class InventoryUI {
     
     /**
      * Handle add product functionality
-     * EXACTLY the same flow as original addProduct method
      */
     private void addProduct() {
-        // Get product name - same dialog as original
+        // Get product name
         String name = JOptionPane.showInputDialog(null, 
             "Enter product name:", 
             "Add Product", 
@@ -118,7 +109,7 @@ public class InventoryUI {
         
         if (name == null) return; // User cancelled
         
-        // Get product price - same dialog as original
+        // Get product price
         String priceStr = JOptionPane.showInputDialog(null, 
             "Enter price for '" + name.trim() + "':", 
             "Add Product", 
@@ -126,7 +117,7 @@ public class InventoryUI {
         
         if (priceStr == null) return; // User cancelled
         
-        // Get initial stock - same dialog as original
+        // Get initial stock
         String stockStr = JOptionPane.showInputDialog(null, 
             "Enter initial stock for '" + name.trim() + "':", 
             "Add Product", 
@@ -138,7 +129,7 @@ public class InventoryUI {
         InventoryService.AddResult result = inventoryService.addProduct(name, priceStr, stockStr);
         
         if (result.isSuccess()) {
-            // Success message - same format as original
+            // Success message
             JOptionPane.showMessageDialog(null, 
                 "Product added successfully!\n\n" +
                 "Name: " + name.trim() + "\n" +
@@ -147,7 +138,7 @@ public class InventoryUI {
                 "Success", 
                 JOptionPane.INFORMATION_MESSAGE);
         } else {
-            // Error message - same format as original
+            // Error message
             JOptionPane.showMessageDialog(null, 
                 result.getMessage(), 
                 "Error", 
@@ -157,7 +148,6 @@ public class InventoryUI {
     
     /**
      * Handle list inventory functionality
-     * EXACTLY the same as original listInventory method
      */
     private void listInventory() {
         if (inventoryService.isEmpty()) {
@@ -189,7 +179,6 @@ public class InventoryUI {
     
     /**
      * Handle buy product functionality
-     * EXACTLY the same flow as original buyProduct method
      */
     private void buyProduct() {
         if (inventoryService.isEmpty()) {
@@ -200,7 +189,7 @@ public class InventoryUI {
             return;
         }
         
-        // Show available products - same format as original
+        // Show available products
         ArrayList<Product> products = inventoryService.getAllProducts();
         StringBuilder availableProducts = new StringBuilder();
         availableProducts.append("Available products:\n\n");
@@ -232,7 +221,7 @@ public class InventoryUI {
         InventoryService.PurchaseResult result = inventoryService.processPurchase(productName, quantityStr);
         
         if (result.isSuccess()) {
-            // Success message - same format as original
+            // Success message
             JOptionPane.showMessageDialog(null, 
                 "Purchase successful!\n\n" +
                 "Product: " + productName.trim() + "\n" +
@@ -240,7 +229,7 @@ public class InventoryUI {
                 "Purchase Completed", 
                 JOptionPane.INFORMATION_MESSAGE);
         } else {
-            // Error message - same format as original
+            // Error message
             JOptionPane.showMessageDialog(null, 
                 result.getMessage(), 
                 "Error", 
@@ -250,7 +239,6 @@ public class InventoryUI {
     
     /**
      * Handle show statistics functionality
-     * EXACTLY the same as original showStatistics method
      */
     private void showStatistics() {
         if (inventoryService.isEmpty()) {
@@ -281,7 +269,6 @@ public class InventoryUI {
     
     /**
      * Handle search product functionality
-     * EXACTLY the same as original searchProduct method
      */
     private void searchProduct() {
         if (inventoryService.isEmpty()) {
@@ -323,7 +310,6 @@ public class InventoryUI {
     
     /**
      * Show final ticket with total sales when exiting
-     * EXACTLY the same as original showFinalTicket method
      */
     private void showFinalTicket() {
         String ticket = "=== FINAL SESSION TICKET ===\n\n" +

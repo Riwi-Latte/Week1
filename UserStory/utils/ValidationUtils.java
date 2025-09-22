@@ -1,10 +1,5 @@
 package UserStory.utils;
 
-/**
- * ValidationUtils - utility methods for input validation
- * Simple validation methods for someone with 2 months Java experience
- * Centralizes all validation logic used throughout the application
- */
 public class ValidationUtils {
     
     /**

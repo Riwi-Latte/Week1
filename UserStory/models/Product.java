@@ -1,22 +1,11 @@
 package UserStory.models;
 
-/**
- * Product class - represents a single product in our inventory
- * Simple class to hold product information
- * Designed for someone with 2 months Java experience
- */
 public class Product {
     // Private fields to store product data
     private String name;
     private double price;
     private int stock;
     
-    /**
-     * Constructor to create a new product
-     * @param name Product name
-     * @param price Product price
-     * @param stock Available stock
-     */
     public Product(String name, double price, int stock) {
         this.name = name;
         this.price = price;

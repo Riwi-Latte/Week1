@@ -6,18 +6,10 @@ import UserStory.models.Inventory;
 import UserStory.models.Product;
 import UserStory.utils.ValidationUtils;
 
-/**
- * InventoryService - handles business logic for inventory operations
- * Maintains all the acceptance criteria while organizing code better
- * Designed for someone with 2 months Java experience
- */
 public class InventoryService {
     private Inventory inventory;           // Our inventory model
     private double totalSales;            // Track total sales for the session
     
-    /**
-     * Constructor - initialize the service
-     */
     public InventoryService() {
         this.inventory = new Inventory();
         this.totalSales = 0.0;
@@ -25,7 +17,7 @@ public class InventoryService {
     
     /**
      * Add a product with validation
-     * Implements all the validation requirements from the original code
+     * Validates input and maintains data consistency
      * @param name Product name
      * @param priceStr Price as string (from JOptionPane)
      * @param stockStr Stock as string (from JOptionPane)
@@ -39,7 +31,7 @@ public class InventoryService {
         
         name = name.trim();
         
-        // Check for duplicates - exactly like original code
+        // Check for duplicates
         if (inventory.indexOfNombre(name) != -1) {
             return new AddResult(false, "Product '" + name + "' already exists!\nUse a different name.");
         }
@@ -94,7 +86,7 @@ public class InventoryService {
     
     /**
      * Process a purchase transaction
-     * Implements all the purchase validation from original code
+     * Validates purchase request and updates inventory
      * @param productName Name of product to buy
      * @param quantityStr Quantity as string (from JOptionPane)
      * @return PurchaseResult with transaction details

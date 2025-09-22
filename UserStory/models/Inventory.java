@@ -3,25 +3,13 @@ package UserStory.models;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-/**
- * Inventory class - manages the collection of products
- * Maintains the EXACT data structures required by the assignment:
- * - ArrayList<String> for product names
- * - double[] for prices
- * - HashMap<String, Integer> for stock
- * 
- * Designed for someone with 2 months Java experience
- */
 public class Inventory {
-    // Required data structures - EXACTLY as specified in the assignment
+    // Data structures for managing products
     private ArrayList<String> productNames;    // ArrayList for names
     private double[] prices;                   // Array for prices, synchronized with names
     private HashMap<String, Integer> stock;    // HashMap for stock
     private int productCount;                  // Keep track of products
     
-    /**
-     * Constructor - initialize the data structures
-     */
     public Inventory() {
         productNames = new ArrayList<>();
         prices = new double[10]; // Start with 10 products capacity
@@ -30,7 +18,7 @@ public class Inventory {
     }
     
     /**
-     * Add a product to inventory - implements addProducto utility method
+     * Add a product to inventory
      * @param name Product name
      * @param price Product price
      * @param stockAmount Initial stock
@@ -42,12 +30,12 @@ public class Inventory {
             return false; // Product already exists
         }
         
-        // Expand prices array if needed - implements expandPrecios utility
+        // Expand prices array if needed
         if (productCount >= prices.length) {
             expandPrecios();
         }
         
-        // Add to all three data structures as required
+        // Add to all three data structures
         productNames.add(name);           // ArrayList
         prices[productCount] = price;     // Array
         stock.put(name, stockAmount);     // HashMap
@@ -57,7 +45,7 @@ public class Inventory {
     }
     
     /**
-     * Expand prices array when it gets full - implements expandPrecios utility method
+     * Expand prices array when it gets full
      */
     private void expandPrecios() {
         double[] newPrices = new double[prices.length * 2];
@@ -69,7 +57,7 @@ public class Inventory {
     }
     
     /**
-     * Find index of product name - implements indexOfNombre utility method
+     * Find index of product name
      * @param name Product name to search for
      * @return index if found, -1 if not found
      */
